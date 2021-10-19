@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Row } from 'react-bootstrap';
+import Service from '../Services/Service';
 import './Home.css';
+import '../Services/Services.css'
 const Home = () =>
 {
+
+    const [services, setServices] = useState([]);
+    useEffect(() =>
+    {
+        fetch('./PhysioService.json')
+            .then(res => res.json())
+            .then(data => setServices(data));
+    }, [])
     return (
         <div >
             <div className="banar container-fluid">
@@ -14,7 +25,7 @@ const Home = () =>
 
             <div className="container my-5">
                 <div className="row p-0 m-0 d-flex">
-                    <div className="col-xs-12 col-sm-6 m-auto">
+                    <div className="col-xs-12 col-sm-6 px-3 m-0 m-auto">
                         <h1 className="text-start">EXPART TREATMENT</h1>
                         <br />
                         <p className="text-start">Because ischemic and hemorrhagic strokes have different causes and effects on the body, both require different treatments.
@@ -25,17 +36,17 @@ const Home = () =>
                             <br />
                             The sections below cover the treatment options for ischemic stroke and hemorrhagic stroke, as well as some general rehabilitation tips for both types.</p>
                     </div>
-                    <div className="col-xs-12 col-sm-6 m-auto">
+                    <div className="col-xs-12 col-sm-6 p-0 m-0 m-auto">
                         <img src="https://fatiherim.com/physiotherapypro/assets/img/blog/2.jpg" className="img-fluid" alt="" />
                     </div>
                 </div >
                 <br /><br />
                 <div className="row p-0 m-0 d-flex">
 
-                    <div className="col-xs-12 col-sm-6 m-auto">
+                    <div className="col-xs-12 col-sm-6 p-0 m-0 m-auto">
                         <img src="https://fatiherim.com/physiotherapypro/assets/img/blog/1.jpg" className="img-fluid" alt="" />
                     </div>
-                    <div className="col-xs-12 col-sm-6 m-auto">
+                    <div className="col-xs-12 col-sm-6 px-3 m-0 m-auto">
                         <h1 className="text-start">Benefits of physical therapy</h1>
                         <br />
                         <p className="text-start">
@@ -61,7 +72,20 @@ const Home = () =>
                             <br />
                             Management of age-related medical problem.</p>
                     </div>
-                </div >
+                </div>
+                <div className="p-0 m-0 bg-info py-2 mt-2">
+                    <h2 className="text-uppercase">our service</h2>
+                </div>
+                <div className="my-5">
+                    <div className="container m-auto">
+                        <Row className="service-container m-auto py-4">
+                            {
+                                services.slice(0, 3).map(service => <Service
+                                    key={service.id} service={service}></Service>)
+                            }
+                        </Row>
+                    </div>
+                </div>
             </div>
         </div >
     );

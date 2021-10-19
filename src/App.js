@@ -10,9 +10,11 @@ import
 import Home from './Componentes/Home/Home';
 import Apointment from './Componentes/Apointment/Apointment';
 import Services from './Componentes/Services/Services';
-// import AboutUs from './Componentes/AboutUs/AboutUs';
 import AboutUs from './Componentes/AboutUs/AboutUs';
 import Footer from './Componentes/Footer/Footer';
+import Login from './Componentes/Login/Login';
+import NotFound from './Componentes/NotFound/NotFound';
+import Register from './Componentes/Register/Register';
 function App()
 {
   return (
@@ -35,6 +37,15 @@ function App()
           </Route>
           <Route path="/aboutus">
             <AboutUs></AboutUs>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/register">
+            <Register></Register>
+          </Route>
+          <Route path="*">
+            <NotFound></NotFound>
           </Route>
         </Switch>
         <Footer></Footer>

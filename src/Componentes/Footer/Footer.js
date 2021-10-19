@@ -24,7 +24,7 @@ const Footer = () =>
                         <div className="col-md-3 col-xs-12 col-sm-6">
                             <h3>Contact Us</h3>
                             <p>
-                                Adress: 18th floor, 02 Shymoli, Dhaka
+                                Adress: 02 road, Shymoli, Dhaka
                                 <br />Phone: (+88) 123 456 123
                                 <br />Email: uzzalcse70@gmail.com
                             </p>
