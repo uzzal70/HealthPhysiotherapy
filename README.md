@@ -1,7 +1,15 @@
 # Getting Started with Create React App
 
+
 This project was [Live Link] (https://physiotherapy-97efa.web.app/).
 
+## Provided Services
+Physiotherapy
+Acupuncture
+Orthopedic Bracing
+Sports Injury
+Rehabilitation
+Physical Theraphy
 ## Available Scripts
 
 In the project directory, you can run:
