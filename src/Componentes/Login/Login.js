@@ -1,28 +1,67 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './login.css';
-import
-{
-    BrowserRouter as
-        Link
-} from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
+import useAuth from '../../Hooks/useAuth';
+
 
 const Login = () =>
 {
+    const { signInUsingGoogle } = useAuth();
+    const { userLogin } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_url = location.state?.from || '/home'
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handelGoogleLogin = () =>
+    {
+        signInUsingGoogle()
+            .then(result =>
+            {
+                history.push(redirect_url)
+            })
+    }
+
+    // User login email and password 
+    const handelUserLogin = e =>
+    {
+        e.preventDefault();
+        console.log('registration');
+        userLogin(email, password)
+        // .then(result =>
+        // {
+        history.push(redirect_url)
+        // })
+    }
+    const userHandelEmailchange = e =>
+    {
+        setEmail(e.target.value);
+    }
+    const userHandelPasswordchange = e =>
+    {
+        setPassword(e.target.value);
+    }
     return (
         <div>
             <div className="about-bg py-5 text-info">
-                <h1>This is registration </h1>
+                <h1>Log In </h1>
             </div>
             <div className="container">
                 <div className="col-xs-4 col-lg-4 m-auto mt-5 p-3 bg-info rounded-3">
-                    <form onSubmit="">
-                        <input className='w-100 p-1 mb-2' type="email" name="" id="" placeholder="Your Email" /><br />
-                        <input className='w-100 p-1 mb-2' type="Password" name="" id="" placeholder="Password" /><br />
-                        <input className='w-50 rounded-pill mb-2' type="submit" value="Submit" />
+                    <form onSubmit={handelUserLogin}>
+                        <input onBlur={userHandelEmailchange} className='w-100 p-1 mb-2' type="email" name="" id="" placeholder="Your Email" /><br />
+                        <input onBlur={userHandelPasswordchange} className='w-100 p-1 mb-2' type="Password" name="" id="" placeholder="Password" /><br />
+                        <input className='w-50 rounded-pill btn-outline-secondary shadow mb-2' type="submit" value="Login" />
                     </form>
                     <hr />
-                    <p><strong>New Pataiant to</strong> <Link to="/register"> Create account</Link> </p>
-                    <button className="btn-regular rounded-pill"> Google Sign In</button>
+                    <p><strong>New patient to</strong> <Link className="text-white" to="/register"> Create account</Link> </p>
+                    <button
+                        className="btn-regular rounded-pill w-50 btn-outline-primary shadow"
+                        onClick={handelGoogleLogin}>
+                        Google Sign In
+                    </button>
                     <hr />
                 </div>
             </div>

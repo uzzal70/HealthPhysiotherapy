@@ -1,10 +1,12 @@
 import React from 'react';
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
 import "./Header.css";
 
 const Header = () =>
 {
+    const { user, logOut } = useAuth();
     return (
         <Navbar className="bg-info" collapseOnSelect expand="lg" sticky="top">
             <Container className="d-flex">
@@ -19,8 +21,16 @@ const Header = () =>
                             <NavLink className="nav-link" to="/Services">Services</NavLink>
                             <NavLink className="nav-link" to="/AboutUs">About us</NavLink>
                             <NavLink className="nav-link" to="/Apointment">Appointment</NavLink>
-                            <NavLink className="nav-link" to="/Login"><span className="btn-danger rounded-pill px-3 pb-1 ">LogIn</span></NavLink>
-                            <NavLink className="nav-link" to="/Logout"><span className="btn-danger rounded-pill px-3 pb-1 ">LogOut</span></NavLink>
+                            <span style={{ color: 'crimson', fontSize: '20px' }} className="m-auto fw-bold px-2" >{user.displayName}</span>
+                            {
+                                user.email ?
+                                    <button onClick={logOut} className="bg-danger rounded-pill btn-padding px-3 m-auto">LogOut</button>
+                                    :
+                                    <NavLink
+                                        className="nav-link" to="/Login"><span className="btn-danger rounded-pill px-3 pb-1 ">LogIn</span>
+                                    </NavLink>}
+
+                            {/* <NavLink className="nav-link" to="/Logout"><span className="btn-danger rounded-pill px-3 pb-1 ">LogOut</span></NavLink> */}
 
 
                         </Nav>
@@ -32,42 +42,5 @@ const Header = () =>
 };
 
 export default Header;
-
-// import React from 'react';
-// import { Container, Nav, Navbar } from 'react-bootstrap';
-// import { NavLink } from 'react-router-dom';
-// import "./Header.css";
-
-// const Header = () =>
-// {
-//     return (
-//         <Navbar bg="light" collapseOnSelect expand="lg" sticky="top">
-//             <Container>
-//                 <NavLink className="navbar-brand text" to="/">
-//                     Employee
-//                 </NavLink>
-//                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-//                 <Navbar.Collapse id="basic-navbar-nav">
-//                     <Nav className="me-auto">
-//                         <NavLink className="nav-link" to="/home">
-//                             Home
-//                         </NavLink>
-//                         <NavLink className="nav-link" to="/about">
-//                             About
-//                         </NavLink>
-//                         <NavLink className="nav-link" to="/service">
-//                             Service
-//                         </NavLink>
-//                         <NavLink className="nav-link" to="/contact">
-//                             Contact
-//                         </NavLink>
-//                     </Nav>
-//                 </Navbar.Collapse>
-//             </Container>
-//         </Navbar>
-//     );
-// };
-
-// export default Header;
 
 

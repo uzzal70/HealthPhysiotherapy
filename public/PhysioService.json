@@ -1,42 +1,42 @@
 [
     {
         "id": 1,
-        "picture": "./Images/1.jpg",
+        "picture": "/Images/1.jpg",
         "name": "Brain Stroke",
         "description": "Stroke occurs when the supply of blood to the brain is either interrupted or reduced. When this happens, the brain does not get enough oxygen or nutrients which causes brain cells to die.",
         "fee": 2500
     },
     {
         "id": 2,
-        "picture": "./Images/2.jpg",
+        "picture": "/Images/2.jpg",
         "name": "Back Pain",
         "description": "Lower Back Pain TreatmentWith accurate assessment and early treatment, most lower back pain injuries will respond extremely quickly to physiotherapy allowing you to quickly resume pain-free and normal activities of daily living.",
         "fee": 1000
     },
     {
         "id": 3,
-        "picture": "./Images/3.jpg",
+        "picture": "/Images/3.jpg",
         "name": "Sprained Ankle",
         "description": "A sprained ankle , also known as an ankle sprain, twisted ankle, rolled . ankle, floppy ankle, ankle injury or ankle ligament injury, is a common medical condition where one or more of the ligaments of the ankle is torn or partially torn.",
         "fee": 1200
     },
     {
         "id": 4,
-        "picture": "./Images/4.jpg",
+        "picture": "/Images/4.jpg",
         "name": "Neck Pain",
         "description": "Neck pain or a stiff neck are extremely common can affect your life in so many different ways. Whether it be sharp neck pain, dull muscular aches, headache, or an inability to fully move your head,a sore neck can be very frustrating.",
         "fee": 1700
     },
     {
         "id": 5,
-        "picture": "./Images/5.jpg",
+        "picture": "/Images/5.jpg",
         "name": "Knee Arthritis",
         "description": "Arthritis is inflammation of one or more of your joints. Pain, swelling, and stiffness are the primary symptoms of arthritis. Any joint in the body may be affected by the disease, but it is particularly common in the knee.",
         "fee": 1000
     },
     {
         "id": 6,
-        "picture": "./Images/6.jpg",
+        "picture": "/Images/6.jpg",
         "name": "Frozen Shoulder",
         "description": "Frozen shoulder (adhesive capsulitis) is stiffness, pain, and limited range of movement in your shoulder. It may happen after an injury or overuse or from a disease such as diabetes or a stroke.",
         "fee": 1500
