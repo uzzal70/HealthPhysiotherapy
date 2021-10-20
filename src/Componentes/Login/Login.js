@@ -28,7 +28,6 @@ const Login = () =>
     const handelUserLogin = e =>
     {
         e.preventDefault();
-        console.log('registration');
         userLogin(email, password)
         // .then(result =>
         // {
