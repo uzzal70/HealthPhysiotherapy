@@ -12,6 +12,8 @@ Rehabilitation
 Physical Theraphy
 ## Available Scripts
 
+## Make An Appointment
+
 In the project directory, you can run:
 
 ### `npm start`
